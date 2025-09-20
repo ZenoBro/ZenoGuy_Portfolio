@@ -4,7 +4,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/toaster';
 import Navigation from '@/components/navigation';
 import Footer from '@/components/footer';
-import ClientLayout from '@/components/client-layout';
+import TransitionLayout from '@/components/layout/transition-layout';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -54,14 +54,14 @@ export default function RootLayout({ children }) {
           enableSystem
           disableTransitionOnChange={false}
         >
-          <ClientLayout>
+          <TransitionLayout>
             <Navigation />
             <main className="min-h-screen">
               {children}
             </main>
             <Footer />
             <Toaster />
-          </ClientLayout>
+          </TransitionLayout>
         </ThemeProvider>
       </body>
     </html>

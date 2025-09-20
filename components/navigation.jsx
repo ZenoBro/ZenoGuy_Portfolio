@@ -7,12 +7,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Home, User, Briefcase, BookOpen, Mail, Sun, Moon } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { Button } from '@/components/ui/button';
+import AnimatedLink from '@/components/ui/animated-link';
 
 const navItems = [
   { name: 'Home', href: '/', icon: Home },
   { name: 'About', href: '/about', icon: User },
-  { name: 'Projects', href: '/projects', icon: Briefcase },
-  { name: 'Blog', href: '/blog', icon: BookOpen },
   { name: 'Contact', href: '/contact', icon: Mail },
 ];
 
@@ -43,37 +42,29 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
+          <AnimatedLink href="/" className="flex items-center space-x-2">
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="text-2xl font-bold bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent"
             >
-              Zenoguy
+              SmoothSite
             </motion.div>
-          </Link>
+          </AnimatedLink>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <Link
+              <AnimatedLink
                 key={item.name}
                 href={item.href}
+                variant="underline"
                 className={`relative px-3 py-2 text-sm font-medium transition-colors hover:text-primary ${
                   pathname === item.href ? 'text-primary' : 'text-muted-foreground'
                 }`}
               >
-                {pathname === item.href && (
-                  <motion.div
-                    layoutId="activeTab"
-                    className="absolute inset-0 bg-primary/10 rounded-md"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                  />
-                )}
-                <span className="relative z-10">{item.name}</span>
-              </Link>
+                {item.name}
+              </AnimatedLink>
             ))}
             
             {/* Theme Toggle */}
