@@ -182,7 +182,7 @@ export default function HeroSection() {
               {/* Image */}
               <div className="relative w-full h-full rounded-full overflow-hidden p-2 bg-gradient-to-br from-primary/20 to-blue-600/20">
                 <img
-                  src="portfolio_zenoguy/frontend/components/home/SG.png"
+                  src="https://raw.githubusercontent.com/Zenoguy/Zen/refs/heads/main/SG.png"
                   alt="Profile Image"
                   className="w-full h-full object-cover rounded-full"
                 />
