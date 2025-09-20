@@ -9,10 +9,13 @@ import ClientLayout from '@/components/client-layout';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Shreyan Ghosh | Full-Stack Developer & Creative Technologist',
+  title: 'Shreyan Ghosh',
   description: 'Full-Stack Developer and Creative Technologist specializing in modern web applications. Explore my projects, skills, and experience.',
   keywords: 'Shreyan Ghosh, Zenoguy, Full-Stack Developer, React, Next.js, Node.js, Creative Technologist',
   authors: [{ name: 'Shreyan Ghosh' }],
+    icons: {
+    icon: "https://raw.githubusercontent.com/Zenoguy/ZenoGuy_Portfolio/refs/heads/main/public/images/Zeno_Guy_2.0-removebg-preview.png",   // or "/logo.png"
+  },
   creator: 'Shreyan Ghosh',
   openGraph: {
     title: 'Shreyan Ghosh | Full-Stack Developer & Creative Technologist',
